@@ -14,6 +14,15 @@ export const getProductById = async (req, res) => {
     }
 };
 
+export const getProductsByCategory = async (req, res) => {
+    const [result] = await pool.query('SELECT * FROM Productos WHERE category = ?', [req.params.category]);
+    if (result.length === 0) {
+        res.status(404).json({ message: 'No se encontraron productos en esta categoría' });
+    } else {
+        res.json(result);
+    }
+};
+
 export const createProduct = async (req, res) => {
     const { title, price, description, category, image, rate, count } = req.body;
     const [result] = await pool.query('INSERT INTO Productos (title, price, description, category, image, rate, count) VALUES (?, ?, ?, ?, ?, ?, ?)', [title, price, description, category, image, rate, count]);
