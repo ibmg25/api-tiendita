@@ -2,6 +2,7 @@ npm init -y
 npm install express
 npm install mysql2
 npm install dotenv
+npm install cors 
 
 Crear archivo .env en la raiz con 
 DB_HOST=localhost
