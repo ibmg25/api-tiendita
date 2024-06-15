@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "npm init -y\r npm install express\r npm install mysql2\r npm install dotenv\r npm install cors",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
